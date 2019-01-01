@@ -23,7 +23,7 @@ I picture this app being used by two types of users:
 ![Wireframe _Main](https://github.com/investment-simulator-full-stack-capstone/github-images/UI-Wireframe.jpg)
 
 ## Working Prototype
-You can access a working prototype of the app here: [Investment Simulator - Beta](https://investment-simulator-capstone.herokuapp.com/)
+You can access a working prototype of the React app here: [Concert Finder - Beta](https://search-concerts-react.herokuapp.com/) and for the Node app here: ***add in node link***
 
 ## Functionality
 The app's functionality includes:
