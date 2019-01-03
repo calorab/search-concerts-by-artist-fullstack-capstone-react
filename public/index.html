@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Poppins|Titillium+Web:700" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <!--
@@ -19,93 +20,90 @@ Learn how to configure a non-root public URL by running `npm run build`.
 </head>
 
 <body>
-
 <!--
     <input type="hidden" id="loggedInUserName" value="">
     <input type="hidden" id="loggedInUserId" value="">
 -->
-
     <section id="banner">
-        <h1 id="title">Concert Finder</h1>
-        <button type="submit">Login</button>
-        <p>`Welcome, {Name}!`< /p>
+        <h1 id="title"><strong>Concert</strong><sp id="finder"><strong>Finder</strong></sp></h1>
+        <button type="submit" id='loginButton'>Login</button>
+        <p class="welcomeName">Welcome, {Name}!</p>
     </section>
 
-    <div class="page" id="signupPage">
-        <form class="createAccountForm">
-            <legend>Create your account to discover concerts near you</legend>
-            <fieldset>
-                <label for="createEmail">Email</label><br>
-                <input type="email" id="createEmail" placeholder="hamsterdance123@netscape.com">
-                <br>
-                <label for="createPassword">Password</label><br>
-                <input type="password" id="createPassword" placeholder="Mypassword1">
-                <label for="createUserName">What should we call you?</label><br>
-                <input type="string" id="createUserName" placeholder="John">
-            </fieldset>
-            <button type="submit" class="submit-button" id="createAccountButton">Create Account!</button>
-        </form>
-    </div>
-
-    <div class="page" id="loginPage">
-        <form class="loginForm">
-            <legend>Login</legend>
-            <fieldset>
-                <label for="loginEmail">Email</label><br>
-                <input type="email" id="loginEmail" placeholder="hamsterdance123@netscape.com">
-                <br>
-                <label for="loginPassword">Password</label><br>
-                <input type="password" id="loginPassword" placeholder="Mypassword1">
-            </fieldset>
-            <button type="submit" class="submit-button" id="loginButton">Sign In</button>
-        </form>
-
-    </div>
-
-    <div class="page" id="artistDashboard">
-        <header>
-            <h1>Your Dashboard</h1>
-            <p>Here's how it works: Search for an artist below to start following them. Artists that you follow are listed below. Click on the artists you're follwing to see their upcoming concerts</p>
-        </header>
-        <form action="">
-            <fieldset>
-                <label for="artistSearch">Enter an artists here...</label>
-                <input type="text" id="artistSearch">
-            </fieldset>
-            <button type="submit" class="submit-button" id="searchButton">Find Arists</button>
-        </form>
-        <div>
-            <h2>Your Artists</h2>
-            <p>Click on the 'X' next to the Artist's name to remove them...</p>
-            <ul>
-                <li>Alison Wonderland</li>
-                <li>Dermot Kennedy</li>
-                <li>Halsey</li>
-                <li>PVRIS</li>
-                <li>Lights</li>
-                <li>Eminem</li>
-                <li>Illenium</li>
-                <li>Travis Scott</li>
-            </ul>
+<!--change all "class" to "className"
+   move login button to hide if logged in-->
+    <div id="root">
+        <div class="page" id="signupPage">
+            <form class="createAccountForm">
+                <legend>Create your account to discover concerts near you</legend>
+                <fieldset>
+                    <label for="createEmail">Email</label><br>
+                    <input type="email" id="createEmail" placeholder="you123@gmail.com"><br>
+                    <label for="createPassword">Password</label><br>
+                    <input type="password" id="createPassword" placeholder="Mypassword1"><br>
+                    <label for="createUserName">What should we call you?</label><br>
+                    <input type="string" id="createUserName" placeholder="John">
+                </fieldset>
+                <button type="submit" class="submit-button" id="createAccountButton">Create Account!</button>
+            </form>
         </div>
-    </div>
 
-   <div class="page" id="concertList">
-    <header>
-        <h1>`{artist}'s Concerts...`</h1>
-    </header>
-    <div>
-        <ul>
-            <li>Atlanta, GA at Chastain ampetheater</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li> </li>
-        </ul>
-    </div>
+        <div class="page" id="loginPage">
+            <form class="loginForm">
+                <legend>Login</legend>
+                <fieldset>
+                    <label for="loginEmail">Email</label><br>
+                    <input type="email" id="loginEmail" placeholder="you123@gmail.com">
+                    <br>
+                    <label for="loginPassword">Password</label><br>
+                    <input type="password" id="loginPassword" placeholder="Mypassword1">
+                </fieldset>
+                <button type="submit" class="submit-button" id="signInButton">Sign In</button>
+            </form>
+        </div>
+
+        <div class="page" id="artistDashboard">
+            <header>
+                <h1>Your Dashboard</h1>
+                <p id="howItWorks">Here's how it works: Search for an artist below to start following them. Artists that you follow are listed below. Click on the artists you're follwing to see their upcoming concerts</p>
+            </header>
+            <form action="">
+                <fieldset>
+                    <label for="artistSearch">Enter an artists here...</label>
+                    <input type="text" id="artistSearch">
+                </fieldset>
+                <button type="submit" class="submit-button" id="searchButton">Find Arists</button>
+            </form>
+            <div id="artistList">
+                <h2>Your Artists</h2>
+                <p id="manageArtists">Click on the 'X' next to the Artist's name to remove them...</p>
+                <ul>
+                    <li>Alison Wonderland</li>
+                    <li>Dermot Kennedy</li>
+                    <li>Halsey</li>
+                    <li>PVRIS</li>
+                    <li>Lights</li>
+                    <li>Eminem</li>
+                    <li>Illenium</li>
+                    <li>Travis Scott</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="page" id="concertList">
+            <header>
+                <h1>{artist}'s Concerts...</h1>
+            </header>
+            <div>
+                <ul>
+                    <li>Atlanta, GA at Chastain Amphitheater</li>
+                    <li>Nashville, TN at Hilltop Studios</li>
+                    <li>Detroit, MI at masonic Temple</li>
+                    <li>Portland, OR at State Theater</li>
+                    <li>Dallas TX at Southside Ballroom</li>
+                </ul>
+            </div>
+        </div>
     </div>
     <!--
 This HTML file is a template.
