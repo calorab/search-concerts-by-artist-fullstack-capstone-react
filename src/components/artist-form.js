@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+//CALEB
 import { makeGuess } from '../actions';
 
 import './guess-form.css';
@@ -9,10 +9,8 @@ export class ArtistForm extends React.Component {
     onSubmit(event) {
         event.preventDefault();
 
-        const value = this.input.value;
-        this.props.dispatch(makeGuess(value));
-        this.input.value = '';
-        this.input.focus();
+        const artistSearch = this.input.artistSearch;
+        this.props.dispatch(makeGuess(artistSearch));
     }
 
     render() {
@@ -27,7 +25,7 @@ export class ArtistForm extends React.Component {
                         <label for="artistSearch">Enter an artists here...</label>
 // CALEB on input if artist success notification + add to list : message(err)
                         <input type="text" id="artistSearch" name="artistSearch"
-                        ref={input => (this.input = input)} required>
+                        ref={artistSearch => (this.artistSearch = artistSearch)} required>
                     </fieldset>
                     <button type="submit" name="submit" className="submit-button" id="searchButton">Add Artist</button>
                 </form>
