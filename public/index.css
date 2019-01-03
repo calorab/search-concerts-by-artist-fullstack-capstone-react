@@ -90,7 +90,8 @@ input {
     background-color: #E1DFDF;
     margin-bottom: 5px;
     margin-top: 5px;
-    font-size: 90%
+    font-size: 90%;
+    padding-left: 4px;
 }
 
 label {
@@ -109,21 +110,3 @@ label {
     margin-bottom: 35px;
 }
 
-/*
-.createAccountForm,
-.loginForm,
-{
-    background-color: darkgray;
-    opacity: 0.8;
-    box-shadow: 0 3px 6px 0 rgba(59, 58, 57, 0.2), 0 4px 10px 0 rgba(59, 58, 57, 0.19);
-    display: 0 auto;
-    width: 75%;
-    height: auto;
-    margin: auto;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-    border: 1px;
-    border-radius: 4px;
-}
-*/

@@ -6,9 +6,10 @@ import './header.css';
 
 export default function Header(props) {
     return (
-        <header>
-        <TopNav />
-        <h1>HOT or COLD</h1>
-        </header>
+        <section id="banner">
+            <h1 id="title"><strong>Concert</strong><sp id="finder"><strong>Finder</strong></sp></h1>
+            <button type="submit" id='loginButton'>Login</button>
+            <p class="welcomeName">Welcome, {Name}!</p>
+        </section>
     );
 }

@@ -1,24 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-//import './public/index.css';
-
-export function GuessList(props) {
-    const guesses = props.guesses.map((guess, index) => (
+export function ConcertList(props) {
+    // CALEB change guesses to Concerts and map over api response
+    const concerts = props.concerts.map((concert, index) => (
         <li key={index}>
-        {guess}
+        {concert}
         </li>
     ));
 
     return (
-        <ul id="guessList" className="guessBox clearfix">
-        {guesses}
-        </ul>
+        <div className="page" id="concertList">
+            <header>
+                <h1>{artist}'s Concerts...</h1>
+            </header>
+            <div>
+                <ul id="concertItems">
+                {concerts}
+                </ul>
+            </div>
+        </div>
     );
 }
 
 const mapStateToProps = state => ({
-    guesses: state.guesses
+    concerts: state.concerts
 });
 
-export default connect(mapStateToProps)(GuessList);
+export default connect(mapStateToProps)(ConcertList);

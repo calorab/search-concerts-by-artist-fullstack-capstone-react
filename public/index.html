@@ -24,12 +24,14 @@ Learn how to configure a non-root public URL by running `npm run build`.
     <input type="hidden" id="loggedInUserName" value="">
     <input type="hidden" id="loggedInUserId" value="">
 -->
+    <!--            switched to React - CHECKED-->
     <section id="banner">
         <h1 id="title"><strong>Concert</strong><sp id="finder"><strong>Finder</strong></sp></h1>
         <button type="submit" id='loginButton'>Login</button>
         <p class="welcomeName">Welcome, {Name}!</p>
     </section>
 
+    <!--            switched to React - CHECKED-->
 <!--change all "class" to "className"
    move login button to hide if logged in-->
     <div id="root">
@@ -42,12 +44,12 @@ Learn how to configure a non-root public URL by running `npm run build`.
                     <label for="createPassword">Password</label><br>
                     <input type="password" id="createPassword" placeholder="Mypassword1"><br>
                     <label for="createUserName">What should we call you?</label><br>
-                    <input type="string" id="createUserName" placeholder="John">
+                    <input type="string" id="createUserName" placeholder="reactGenius123">
                 </fieldset>
                 <button type="submit" class="submit-button" id="createAccountButton">Create Account!</button>
             </form>
         </div>
-
+        <!--            switched to React - CHECKED-->
         <div class="page" id="loginPage">
             <form class="loginForm">
                 <legend>Login</legend>
@@ -61,22 +63,24 @@ Learn how to configure a non-root public URL by running `npm run build`.
                 <button type="submit" class="submit-button" id="signInButton">Sign In</button>
             </form>
         </div>
-
+    <!--            switched to React - CHECKED-->
         <div class="page" id="artistDashboard">
             <header>
                 <h1>Your Dashboard</h1>
                 <p id="howItWorks">Here's how it works: Search for an artist below to start following them. Artists that you follow are listed below. Click on the artists you're follwing to see their upcoming concerts</p>
             </header>
+            <!--            switched to React - CHECKED-->
             <form action="">
                 <fieldset>
                     <label for="artistSearch">Enter an artists here...</label>
                     <input type="text" id="artistSearch">
                 </fieldset>
-                <button type="submit" class="submit-button" id="searchButton">Find Arists</button>
+                <button type="submit" class="submit-button" id="searchButton">Add Artist</button>
             </form>
+<!--            switched to React - CHECKED-->
             <div id="artistList">
                 <h2>Your Artists</h2>
-                <p id="manageArtists">Click on the 'X' next to the Artist's name to remove them...</p>
+                <p id="manageArtists">Click on the 'X' next to the Artist's name to see concerts or remove them from your list...</p>
                 <ul>
                     <li>Alison Wonderland</li>
                     <li>Dermot Kennedy</li>
@@ -89,7 +93,7 @@ Learn how to configure a non-root public URL by running `npm run build`.
                 </ul>
             </div>
         </div>
-
+<!--switched to React - CHECK-->
         <div class="page" id="concertList">
             <header>
                 <h1>{artist}'s Concerts...</h1>

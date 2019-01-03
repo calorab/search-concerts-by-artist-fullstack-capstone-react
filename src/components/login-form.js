@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 
 import { makeGuess } from '../actions';
 
-import './guess-form.css';
+//CALEB change guesses to Login and make statFULL
 
-export class GuessForm extends React.Component {
+export class LoginForm extends React.Component {
     onSubmit(event) {
         event.preventDefault();
 
@@ -17,30 +17,21 @@ export class GuessForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={e => this.onSubmit(e)}>
-            <input
-type="number"
-name="userGuess"
-id="userGuess"
-className="text"
-min="1"
-max="100"
-autoComplete="off"
-aria-labelledby="feedback"
-ref={input => (this.input = input)}
-required
-/>
-    <button
-type="submit"
-name="submit"
-id="guessButton"
-className="button"
->
-    Guess
-</button>
-</form>
-);
-}
+            <div class="page" id="loginPage">
+                <form onSubmit={e => this.onSubmit(e)} className="loginForm"
+                    <legend>Login</legend>
+                    <fieldset>
+                        <label for="loginEmail">Email</label><br>
+                        <input name="userEmail"> type="email" id="loginEmail" placeholder="you123@gmail.com" ref={input => (this.input = input)} required>
+                        <br>
+                        <label for="loginPassword">Password</label><br>
+                        <input type="password" id="loginPassword" placeholder="Mypassword1">
+                    </fieldset>
+                    <button type="submit" class="submit-button" id="signInButton">Sign In</button>
+                </form>
+            </div>
+        );
+    }
 }
 
-export default connect ()(GuessForm);
+export default connect ()(LoginForm);

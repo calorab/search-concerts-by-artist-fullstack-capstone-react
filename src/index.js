@@ -8,10 +8,10 @@ import './reset.css';
 import './index.css';
 
 import Game from './components/game';
-
+// CALEB make changes
 ReactDOM.render(
     <Provider store={store}>
-    <Game />
+        <Game />
     </Provider>,
     document.getElementById('root')
 );

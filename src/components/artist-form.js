@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { makeGuess } from '../actions';
 
 import './guess-form.css';
-
-export class GuessForm extends React.Component {
+//CALEB change Guess to Artist and make statFULL
+export class ArtistForm extends React.Component {
     onSubmit(event) {
         event.preventDefault();
 
@@ -17,30 +17,23 @@ export class GuessForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={e => this.onSubmit(e)}>
-            <input
-type="number"
-name="userGuess"
-id="userGuess"
-className="text"
-min="1"
-max="100"
-autoComplete="off"
-aria-labelledby="feedback"
-ref={input => (this.input = input)}
-required
-/>
-    <button
-type="submit"
-name="submit"
-id="guessButton"
-className="button"
->
-    Guess
-</button>
-</form>
-);
-}
+            <div class="page" id="artistDashboard">
+                <header>
+                    <h1>Your Dashboard</h1>
+                    <p id="howItWorks">Here's how it works: Search for an artist below to start following them. Artists that you follow are listed below. Click on the artists you're follwing to see their upcoming concerts</p>
+                </header>
+                <form onSubmit={e => this.onSubmit(e)} id="artistSearchForm">
+                    <fieldset>
+                        <label for="artistSearch">Enter an artists here...</label>
+// CALEB on input if artist success notification + add to list : message(err)
+                        <input type="text" id="artistSearch" name="artistSearch"
+                        ref={input => (this.input = input)} required>
+                    </fieldset>
+                    <button type="submit" name="submit" className="submit-button" id="searchButton">Add Artist</button>
+                </form>
+            </div>
+        );
+    }
 }
 
-export default connect ()(GuessForm);
+export default connect ()(ArtistForm);
