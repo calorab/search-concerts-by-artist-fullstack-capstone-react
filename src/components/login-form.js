@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { makeGuess } from '../actions';
+import { loginForm } from '../actions';
 
 //CALEB change guesses to Login and make statFULL
 
@@ -11,7 +11,7 @@ export class LoginForm extends React.Component {
 
         const loginEmail = this.input.loginEmail;
         const loginPassword = this.input.loginPassword;
-        this.props.dispatch(makeGuess(loginEmail, loginPassword));
+        this.props.dispatch(loginForm(loginEmail, loginPassword));
     }
 
     render() {

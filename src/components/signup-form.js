@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { makeGuess } from '../actions';
+import { signupForm } from '../actions';
 
-import './guess-form.css';
+import './index.css';
 
 export class SignupForm extends React.Component {
     onSubmit(event) {

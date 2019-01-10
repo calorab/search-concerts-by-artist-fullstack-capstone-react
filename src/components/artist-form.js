@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 //CALEB
-import { makeGuess } from '../actions';
+import { artistSearchForm } from '../actions';
 
 import './guess-form.css';
 //CALEB change Guess to Artist and make statFULL
@@ -10,7 +10,8 @@ export class ArtistForm extends React.Component {
         event.preventDefault();
 
         const artistSearch = this.input.artistSearch;
-        this.props.dispatch(makeGuess(artistSearch));
+
+        this.props.dispatch(artistSearchForm(artistSearch));
     }
 
     render() {
