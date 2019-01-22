@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { artistSearchForm } from '../actions';
 
 import './guess-form.css';
+
 //CALEB change Guess to Artist and make statFULL
 export class ArtistForm extends React.Component {
     onSubmit(event) {
@@ -12,6 +13,38 @@ export class ArtistForm extends React.Component {
         const artistSearch = this.input.artistSearch;
 
         this.props.dispatch(artistSearchForm(artistSearch));
+    }
+
+    componentDidMount() {
+        this.loadGetFromSongkick();
+    }
+
+    loadGetFromSongkick() {
+        this.setState({
+            error: null,
+            loading: true
+        });
+
+        //Caleb - Update to songkick api***
+        return fetch(`${API_SEARCH_URL} + ApiKey`)
+            .then(res => {
+            if (!res.ok) {
+                return Promise.reject(res.statusText);
+            }
+            return res.json();
+        })
+            .then(getFromSongkick =>
+                  this.setState({
+            artists: getFromSongkick.artists,
+            loading: false
+        })
+                 )
+            .catch(err =>
+                   this.setState({
+            error: 'Could not load artists',
+            loading: false
+        })
+                  );
     }
 
     render() {
