@@ -16,35 +16,35 @@ export class ArtistForm extends React.Component {
     }
 
     componentDidMount() {
-        this.loadGetFromSongkick();
+        this.loadGetArtistsFromSongkick();
     }
 
-    loadGetFromSongkick() {
+    loadGetArtistsFromSongkick() {
         this.setState({
             error: null,
             loading: true
         });
 
-        //Caleb - Update to songkick api***
-        return fetch(`${API_SEARCH_URL} + ApiKey`)
+        return fetch("https://api.songkick.com/api/3.0/search/artists.json?apikey=ZOV7FltnOvfdD7o9&query=" + artistSearch)
             .then(res => {
             if (!res.ok) {
                 return Promise.reject(res.statusText);
             }
             return res.json();
-        })
-            .then(getFromSongkick =>
-                  this.setState({
-            artists: getFromSongkick.artists,
-            loading: false
-        })
-                 )
+            console.log(res.json);
+            })
+            .then(GetArtistsFromSongkick =>
+                this.setState({
+                    artists: GetArtistsFromSongkick.artists,
+                    loading: false
+                })
+            )
             .catch(err =>
-                   this.setState({
-            error: 'Could not load artists',
-            loading: false
-        })
-                  );
+                this.setState({
+                    error: 'Could not load artists',
+                    loading: false
+                })
+            );
     }
 
     render() {
